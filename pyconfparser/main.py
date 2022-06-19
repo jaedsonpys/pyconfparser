@@ -46,3 +46,10 @@ class PyConfigParser:
 
     def __getitem__(self, item: str) -> str:
         return self._config[item]
+
+
+if __name__ == '__main__':
+    parser = PyConfigParser()
+    parser.read_file('config.txt')
+
+    print(parser['project']['name'])
