@@ -7,5 +7,5 @@ class PyConfigParser:
         self._config = None
 
     def read_file(self, filename: str) -> None:
-        with open(filename, 'w') as file_w:
-            self.file_content = file_w.read()
+        with open(filename, 'r') as file_r:
+            self.file_content = file_r.read()
