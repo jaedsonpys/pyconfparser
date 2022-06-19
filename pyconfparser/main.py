@@ -1,3 +1,4 @@
+from ctypes import Union
 from typing import TextIO
 
 
@@ -42,3 +43,6 @@ class PyConfigParser:
     def read_string(self, string: str) -> None:
         self.file_content = string
         self._parser()
+
+    def __getitem__(self, item: str) -> str:
+        return self._config[item]
