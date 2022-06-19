@@ -38,3 +38,7 @@ class PyConfigParser:
             self.file_content = file_r.read()
 
         self._parser()
+
+    def read_string(self, string: str) -> None:
+        self.file_content = string
+        self._parser()
