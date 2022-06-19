@@ -21,7 +21,7 @@ class PyConfigParser:
                     section_name = line.replace(':', '')
                     current_section = section_name
                     file_config[section_name] = {}
-                elif '=' in line:  # if is a option                
+                elif '=' in line:  # if is a option
                     option, value = line.split('=')
                     option = option.strip()
                     value = value.strip()
@@ -36,3 +36,5 @@ class PyConfigParser:
     def read_file(self, filename: str) -> None:
         with open(filename, 'r') as file_r:
             self.file_content = file_r.read()
+
+        self._parser()
