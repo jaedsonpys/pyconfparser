@@ -4,10 +4,10 @@
 
 ## Instalation
 
-Use the **PyPacking** package manager to install this package. Download the package file in [dist/ directory](https://github.com/jaedsonpys/pyconfparser/tree/master/dist), and run the following command to install the package:
+Use the **PyPacking** package manager to install this package. Download the last package version file in [dist/ directory](https://github.com/jaedsonpys/pyconfparser/tree/master/dist), and run the following command to install the package:
 
 ```
-pypacking install PyConfParser.zip
+pypacking install pyconfparser-version.zip
 ```
 
 Ready! Your package has been **installed successfully**
