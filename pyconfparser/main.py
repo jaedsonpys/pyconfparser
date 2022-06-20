@@ -43,6 +43,9 @@ class PyConfigParser:
     def __getitem__(self, item: str) -> str:
         return self._config[item]
 
+    def __setitem__(self, key, value) -> None:
+        self._config[key] = value
+
 
 if __name__ == '__main__':
     parser = PyConfigParser()
