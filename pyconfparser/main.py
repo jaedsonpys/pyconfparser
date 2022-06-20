@@ -44,10 +44,12 @@ class PyConfigParser:
         config_list_string = []
 
         for k, v in self._config.items():
-            config_list_string.append(f'{k}:')
             if isinstance(v, dict):
+                config_list_string.append(f'{k}:')
                 for k2, v2 in v.items():
                     config_list_string.append(f'{k2} = {v2}')
+            else:
+                config_list_string.append(f'{k} = {v}')
 
             config_list_string.append('')
 
