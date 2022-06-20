@@ -83,3 +83,33 @@ parser.read_string(config)
 
 print(parser['section']['option1']) # output: value1
 ```
+
+### Creating a configuration file
+
+Here's how to create a configuration file using `pyconfparser`:
+
+```python
+from pyconfparser import PyConfigParser
+
+parser = PyConfigParser()
+
+parser['global'] = 'global option'
+
+parser['project'] = {
+    'name': 'test',
+    'version': '0.1.0'
+}
+
+config = parser.create_config()
+```
+
+At the end, use the `create_config` method to generate the configuration file. You can also use this to update your current options:
+
+```python
+from pyconfparser import PyConfigParser
+
+parser = PyConfigParser()
+parser.read_file('config.txt')
+
+parser['project']['name'] = 'name'
+```
