@@ -1,7 +1,7 @@
 class PyConfigParser:
     def __init__(self):
         self.file_content = None
-        self._config = None
+        self._config = {}
 
     def _parser(self) -> None:
         file_lines = self.file_content.split('\n')
@@ -39,6 +39,20 @@ class PyConfigParser:
     def read_string(self, string: str) -> None:
         self.file_content = string
         self._parser()
+
+    def create_config(self) -> str:
+        config_list_string = []
+
+        for k, v in self._config.items():
+            config_list_string.append(f'{k}:')
+            if isinstance(v, dict):
+                for k2, v2 in v.items():
+                    config_list_string.append(f'{k2} = {v2}')
+
+            config_list_string.append('')
+
+        config_string = '\n'.join(config_list_string)
+        return config_string
 
     def __getitem__(self, item: str) -> str:
         return self._config[item]
