@@ -113,3 +113,11 @@ parser.read_file('config.txt')
 
 parser['project']['name'] = 'name'
 ```
+
+# License
+
+```
+MIT License © 2022 Jaedson Silva
+```
+
+This project use the **MIT** license.
