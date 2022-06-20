@@ -68,3 +68,20 @@ if __name__ == '__main__':
     parser.read_file('config.txt')
 
     print(parser['project']['name'])
+
+    # creating config
+    parser2 = PyConfigParser()
+
+    parser2['global'] = 'pyconfparser'
+
+    parser2['project'] = {
+        'name': 'PyPacking',
+        'version': '0.1.0'
+    }
+
+    parser2['files'] = {
+        'main.py': 'accepted',
+        '.giignore': 'accepted'
+    }
+
+    print(parser2.create_config())
